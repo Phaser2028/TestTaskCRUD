@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Dmitriy
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(100)
+              - column:
+                  name: age
+                  type: INT
+              - column:
+                  name: role
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type: VARCHAR(255)

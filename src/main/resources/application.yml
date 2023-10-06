@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/test_task
+    username: postgres
+    password: postgre123
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/test_task
+    driver-class-name: org.postgresql.Driver
+    user: postgres
+    password: postgre123
+    database-change-log-lock-table: mychangeloglocktable
+
+jwt:
+  secret: privet

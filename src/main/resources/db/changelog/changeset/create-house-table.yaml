@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: Dmitriy
+      changes:
+        - createTable:
+            tableName: house
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+              - column:
+                  name: owner_id
+                  type: INT
+                  constraints:
+                    foreignKeyName: owner_id
+                    referencedColumnNames: person(id)
+                    deleteCascade: true
